@@ -1,14 +1,11 @@
+---
+name: skill-scanner
+description: Scan Clawdbot and MCP skills for malware, spyware, crypto-miners, and malicious code patterns before you install them. Security audit tool that detects data exfiltration, system modification attempts, backdoors, and obfuscation techniques.
+---
+
 # Skill Scanner
 
-> Scan Clawdbot and MCP skills for malware, spyware, crypto-miners, and malicious code patterns before you install them.
-
-## Metadata
-- **Name:** skill-scanner
-- **Version:** 1.0.0
-- **Author:** bvinci1-design
-- **Description:** Security audit tool for Clawdbot/MCP skills - scans for malware, spyware, crypto-mining, and malicious patterns
-- **Category:** Security / Development Tools
-- **License:** MIT
+Security audit tool for Clawdbot/MCP skills - scans for malware, spyware, crypto-mining, and malicious patterns.
 
 ## Capabilities
 - Scan skill folders for security threats
