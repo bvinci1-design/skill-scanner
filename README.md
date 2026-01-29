@@ -24,57 +24,127 @@ cd skill-scanner
 # Requires Python 3.7+
 ```
 
-## Usage
+---
 
-### Basic scan
+## How to Run in Clawdbot
 
+Clawdbot users can run this scanner directly as a skill to audit other downloaded skills.
+
+### Quick Start (Clawdbot)
+
+1. **Download the scanner** from this repo to your Clawdbot skills folder:
+   ```bash
+   cd ~/.clawdbot/skills
+   git clone https://github.com/bvinci1-design/skill-scanner.git
+   ```
+
+2. **Scan any skill** by telling Clawdbot:
+   ```
+   "Scan the [skill-name] skill for security issues using skill-scanner"
+   ```
+   
+   Or run directly:
+   ```bash
+   python ~/.clawdbot/skills/skill-scanner/skill_scanner.py ~/.clawdbot/skills/[skill-name]
+   ```
+
+3. **Review the output** - Clawdbot will display:
+   - Verdict: APPROVED, CAUTION, or REJECT
+   - Any security findings with severity levels
+   - Specific file and line numbers for concerns
+
+### Example Clawdbot Commands
+
+```
+"Use skill-scanner to check the youtube-watcher skill"
+"Scan all my downloaded skills for malware"
+"Run a security audit on the remotion skill"
+```
+
+### Interpreting Results in Clawdbot
+
+| Verdict | Meaning | Action |
+|---------|---------|--------|
+| APPROVED | No security issues found | Safe to use |
+| CAUTION | Minor concerns detected | Review findings before use |
+| REJECT | Critical security issues | Do not use without careful review |
+
+---
+
+## How to Run on Any Device
+
+The scanner works on any system with Python 3.7+ installed.
+
+### Prerequisites
+
+- Python 3.7 or higher
+- Git (for cloning) or download ZIP from GitHub
+- No additional packages required (uses Python standard library)
+
+### Installation Options
+
+**Option 1: Clone with Git**
+```bash
+git clone https://github.com/bvinci1-design/skill-scanner.git
+cd skill-scanner
+```
+
+**Option 2: Download ZIP**
+1. Click "Code" button on GitHub
+2. Select "Download ZIP"
+3. Extract to desired location
+
+### Command Line Usage
+
+**Basic scan:**
 ```bash
 python skill_scanner.py /path/to/skill-folder
 ```
 
-### Output to file
-
+**Output to file:**
 ```bash
 python skill_scanner.py /path/to/skill-folder --output report.md
 ```
 
-### JSON output
-
+**JSON output:**
 ```bash
 python skill_scanner.py /path/to/skill-folder --json
 ```
 
-### Example output
-
-```markdown
-# Skill Security Review - youtube-watcher 1.0.0
-
-**Scan Date:** 2026-01-29T08:30:00
-**Skill Path:** `/home/user/.clawdbot/skills/youtube-watcher`
-
-## Verdict
-
-**APPROVED** - No critical or high-severity issues detected
-
-## Metadata
-
-- **Name:** youtube-watcher
-- **Version:** 1.0.0
-- **Author:** michael gathara
-- **Has SKILL.md:** True
-- **Files:** 2
-- **Scripts:** 1
-- **Total Lines:** 89
-
-## Findings
-
-No security issues detected.
+**Scan current directory:**
+```bash
+python skill_scanner.py .
 ```
+
+### Web UI (Streamlit)
+
+For a user-friendly graphical interface:
+
+1. **Install Streamlit:**
+   ```bash
+   pip install streamlit
+   ```
+
+2. **Run the UI:**
+   ```bash
+   streamlit run streamlit_ui.py
+   ```
+
+3. **Open in browser** at `http://localhost:8501`
+
+4. **Features:**
+   - Drag-and-drop file upload
+   - Support for ZIP archives
+   - Paste code directly for scanning
+   - Visual severity indicators
+   - Export reports in Markdown or JSON
+
+---
 
 ## Exit Codes
 
 | Code | Meaning |
-|------|--------|
+|------|---------|
 | 0 | Approved - no issues |
 | 1 | Caution - high-severity issues |
 | 2 | Reject - critical issues |
@@ -119,4 +189,4 @@ Pull requests welcome! To add new threat patterns, edit the `THREAT_PATTERNS` li
 
 ## License
 
-MIT
+MIT License - see LICENSE file for details.
