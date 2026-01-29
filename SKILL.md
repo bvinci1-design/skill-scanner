@@ -1,5 +1,7 @@
 # Skill Scanner
 
+> Scan Clawdbot and MCP skills for malware, spyware, crypto-miners, and malicious code patterns before you install them.
+
 ## Metadata
 - **Name:** skill-scanner
 - **Version:** 1.0.0
@@ -48,4 +50,4 @@ streamlit run streamlit_ui.py
 - **Web UI:** `streamlit_ui.py`
 
 ## Tags
-`security` `audit` `scanner` `malware` `spyware` `crypto-mining` `code-analysis` `mcp` `clawdbot`
+#security #malware #spyware #crypto-mining #scanner #audit #code-analysis #mcp #clawdbot #agent-skills #safety #threat-detection #vulnerability
